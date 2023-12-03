@@ -1,0 +1,21 @@
+        .rectangleColor(.brown)
+    }
+}
+
+fileprivate struct ColoredRoundRectangle: View {
+    
+    @Environment(\.rectangleColor) private var rectangleColor
+    
+    var body: some View {
+        RoundedRectangle(cornerRadius: 10)
+            .fill(rectangleColor)
+            .frame(width: 50, height: 50)
+    }
+}
+
+struct EnvironmentValuesUsageView_Previews: PreviewProvider {
+    static var previews: some View {
+        EnvironmentValuesUsageView()
+    }
+}
+
